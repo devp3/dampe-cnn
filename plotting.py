@@ -152,7 +152,7 @@ def plot_bias(prediction, truth, var_label='x_top', fit_bias=True):
                                    p0=[1000., 0., 0.5*(n.max() - n.min())], 
                                    absolute_sigma=False)
 
-            x_values = np.linspace(-1.1,1.1, 1000)
+            x_values = np.linspace(min(bin_centers), max(bin_centers), 1000)
             ax.plot(x_values, gaus_fit(x_values, *popt), color='tab:orange', linewidth=2, label="Fit")
 
             ax.text(0.85, 0.8, f"$\mu$ = {popt[1]:0.3f}", 
